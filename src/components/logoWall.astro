@@ -7,9 +7,13 @@ const technologies = [
   "React.js",
   "Next.js",
   "MongoDB",
+  "golang",
+  "SQLite",
+  "python",
+  "fastAPI",
   "supabase",
-  "c#",
-  ".NET",
+  "csharp",
+  "NET",
   "Microsoft SQL Server",
   "Azure",
   "Git",
@@ -31,7 +35,7 @@ const technologies = [
       [...technologies, ...technologies, ...technologies].map((tech) => (
         <div class="flex items-center gap-2 group transition-all duration-300">
           <img
-            src={`/svg/${tech}.svg`}
+            src={`/svg/${tech === 'golang' ? 'golang.gif' : `${tech}.svg`}`}
             alt={tech}
             class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
             width="30"
@@ -39,7 +43,7 @@ const technologies = [
             loading="lazy"
           />
           <span class="text-lg font-medium text-[var(--white-icon)]">
-            {tech.charAt(0).toUpperCase() + tech.slice(1)}
+            {tech === 'csharp' ? 'C#' : tech === 'NET' ? '.NET' : tech.charAt(0).toUpperCase() + tech.slice(1)}
           </span>
         </div>
       ))
