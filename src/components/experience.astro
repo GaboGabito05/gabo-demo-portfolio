@@ -1,0 +1,106 @@
+---
+interface Experience {
+  role: string;
+  company: string;
+  duration: string;
+  description: string;
+}
+
+const experiences: Experience[] = [
+  {
+    role: "Backend Developer",
+    company: "COMPINA S.A.C.",
+    duration: "APRIL 2022 – JUNE 2022",
+    description: "In this company, I was responsible for the Backend development of a CRM system for its internal infrastructure. I participated in the system design and was part of a team that worked under the SCRUM methodology, using technologies such as Node.js, Express.js, MySQL, and Git for version control.",
+  },
+  {
+    role: "Frotend Developer",
+    company: "COMPIPRO S.A.C.",
+    duration: "JULY 2022 – SEPTEMBER 2022",
+    description: "I developed optimized web interfaces with Astro, React, Tailwind CSS, and TypeScript, focusing on performance and accessibility. Implemented SSR, CSR, and caching to improve user experience. Optimized deployments and security through Cloudflare Pages.",
+  },
+  {
+    role: "RPA Developer",
+    company: "DATA DISCOVERY SOLUTIONS S.A.C.",
+    duration: "OCTOBER 2022 – APRIL 2023",
+    description: "In this company, I developed and implemented RPA robots with Rocketbot Studio, optimizing processes with JavaScript, Python, and Excel. Automated repetitive tasks, improving operational efficiency and system integration. Additionally, I was trained and certified in the Rocketbot Studio tool.",
+  },
+  {
+    role: "Full Stack Developer",
+    company: "IB GROUP S.A.C.",
+    duration: "APRIL 2023 – APRIL 2024",
+    description: "I developed and maintained the company's web infrastructure with Angular, ASP.NET Core, Microsoft SQL Server, ensuring stability and performance optimization. Managed local and cloud servers, implemented version control with Git, and improved user experience by applying UI/UX best practices.",
+  },
+  {
+    role: "CEO & Software Architect",
+    company: "BLACKMOUNT CORPORATION E.I.R.L.",
+    duration: "APRIL 2024 – PRESENT",
+    description: "As a Software Architech, I designed the architecture of all the company's products, SaaS and PaaS, focusing on scalability, performance, and security. Led the design and development of ERP systems, optimizing applications and cloud solutions with Next.js, MongoDB, and Azure, aligning the infrastructure with the company's strategic vision.",
+  },
+  {
+    role: "Partner & Software Engineer",
+    company: "PANDA TECH S.A.C.",
+    duration: "MARZO 2025 – PRESENT",
+    description: "As a partner at Panda Tech S.A.C., I participated in the development of software solutions for clients using a variety of web and mobile technologies. I worked closely with cross-functional teams to deliver high-quality products, ensuring that the solutions met client requirements and industry standards.",
+  },
+];
+---
+
+<section id="experience" class="py-12 border-t border-[#ffffff10] text-[var(--white)]">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My Journey</h2>
+    <h3 class="text-4xl md:text-5xl font-medium mb-8">Experience</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        experiences.map((experience) => (
+          <div class="group">
+            <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4 p-6 bg-transparent border border-[var(--white-icon-tr)] h-full transform transition-transform duration-300 hover:scale-105 hover:bg-[rgba(255,255,255,0.1)]">
+              <h4 class="text-2xl font-semibold text-white">{experience.role}</h4>
+              <span class="py-1 text-sm text-[var(--white-icon)]">
+                {experience.company} - {experience.duration}
+              </span>
+              <p class="mt-4 text-md text-[var(--white-icon)]">
+                {experience.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('scroll', () => {
+    const experienceSection = document.getElementById('experience');
+    const navLink = document.querySelector('nav a[href="#experience"]');
+    const rect = experienceSection.getBoundingClientRect();
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      navLink.classList.add('text-white');
+    } else {
+      navLink.classList.remove('text-white');
+    }
+  });
+</script>
+
+<style is:global>
+  .shiny-sec {
+    background: linear-gradient(135deg, #a476ff 25%, #eee5ff 50%, #a476ff 75%);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 100% 50%;
+    }
+    30%,
+    70% {
+      background-position: 0% 50%;
+    }
+  }
+</style>
