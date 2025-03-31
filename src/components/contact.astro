@@ -4,7 +4,7 @@
     <h3 class="text-4xl md:text-5xl font-medium text-[var(--white)] mb-6">
       Contact
     </h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="flex flex-col gap-8">
       <div class="text-[var(--white-icon)]">
         <p class="mb-4">
           Do you have a project in mind? Don't hesitate to contact me.
@@ -15,46 +15,181 @@
         </div>
       </div>
 
-      <div>
-        <form
-          id="contact-form"
-          action="https://formspree.io/f/mvgkovqn"
-          method="POST"
-          class="flex flex-col gap-4"
-        >
-          <input
-            type="text"
-            name="from_name"
-            placeholder="Name"
-            required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
-          />
-          <input
-            type="email"
-            name="reply_to"
-            placeholder="Email"
-            required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
-          />
-          <textarea
-            name="message"
-            placeholder="Message"
-            rows="6"
-            required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none"
-          ></textarea>
-          <button
-            type="submit"
-            class="px-4 py-2 bg-[var(--white-icon-tr)] text-[var(--white)] rounded-lg opacity-60 transition-opacity border border-[var(--white-icon-tr)] hover:opacity-100 hover:bg-[var(--white-icon-tr)]"
+      <div class="flex flex-col md:flex-row gap-12">
+        <div class="md:w-[485px]">
+          <div id="email-form" class="bg-[#1414149c] rounded-2xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] border border-[var(--white-icon-tr)]">
+            <div class="flex items-center justify-between px-4 py-3 border-b border-[var(--white-icon-tr)]">
+              <span class="text-[var(--white)] text-sm font-medium">New Message</span>
+            </div>
+            <form
+              id="contact-form"
+              action="https://formspree.io/f/mvgkovqn"
+              method="POST"
+              class="flex flex-col"
+            >
+              <div class="flex items-center gap-2 py-2 px-4">
+                <span class="text-[var(--white-icon)] text-sm min-w-[3rem]">From:</span>
+                <div class="flex-1">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Tu correo electrónico"
+                    required
+                    class="w-full px-0 py-0.5 bg-transparent text-[var(--white)] text-sm focus:outline-none placeholder-[var(--white-icon)]"
+                  />
+                </div>
+              </div>
+              <div class="border-b border-[var(--white-icon-tr)]"></div>
+              <div class="flex items-center gap-2 py-2 px-4">
+                <span class="text-[var(--white-icon)] text-sm min-w-[3rem]">To:</span>
+                <div class="flex-1 flex items-center gap-2">
+                  <input
+                    type="email"
+                    name="reply_to"
+                    value="ceo@blackmountcorporation.com"
+                    readonly
+                    class="w-full px-0 py-0.5 bg-transparent text-[var(--white)] text-sm focus:outline-none"
+                  />
+                  <button 
+                    type="button" 
+                    id="copy-email-btn" 
+                    class="p-1.5 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                    title="Copiar correo"
+                  >
+                    <svg class="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M8 4v12a2 2 0 002 2h8a2 2 0 002-2V7.242a2 2 0 00-.602-1.43L16.083 2.57A2 2 0 0014.685 2H10a2 2 0 00-2 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2h2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="border-b border-[var(--white-icon-tr)]"></div>
+              <div class="py-2 border-b border-[var(--white-icon-tr)]">
+                <div class="flex items-center gap-4 px-4">
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    class="flex-1 px-0 py-0.5 bg-transparent text-[var(--white)] text-sm focus:outline-none placeholder-[var(--white-icon)]"
+                  />
+                  <span class="text-[var(--white-icon)] text-xs whitespace-nowrap">{new Date().toLocaleString('en-US', { 
+                    month: 'short',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                  })}</span>
+                </div>
+              </div>
+              <div class="relative py-3 flex-grow transition-all duration-300 ease-out px-4" style="min-height: 200px;">
+                <textarea
+                  name="message"
+                  placeholder="Write your message here..."
+                  class="w-full h-full px-0 py-0 bg-transparent text-[var(--white)] text-sm focus:outline-none resize-none leading-relaxed overflow-y-auto placeholder-[var(--white-icon)] scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+                  style="min-height: 180px; max-height: 300px;"
+                ></textarea>
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-transparent">
+                  <div class="absolute right-0 top-0 bottom-0 w-full bg-[var(--white-icon-tr)] rounded-full opacity-0 hover:opacity-100 transition-opacity"></div>
+                </div>
+              </div>
+              <button
+                type="submit"
+                id="send-button"
+                class="w-full py-3 px-4 text-[var(--white-icon)] hover:text-white transition-all duration-500 ease-in-out border-t border-[var(--white-icon-tr)] bg-[#1414149c] hover:bg-[var(--white-icon-tr)] flex items-center justify-center gap-2"
+              >
+                <svg class="w-[18px] h-[18px] transition-colors duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="transition-colors duration-500">Send</span>
+              </button>
+              <div class="hidden modal-actions fixed bottom-0 left-0 right-0 py-4 px-6 bg-[#1414149c] border-t border-[var(--white-icon-tr)]">
+                <div class="max-w-[800px] mx-auto flex justify-end">
+                  <button
+                    type="submit"
+                    class="px-6 py-2 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                  >
+                    Send Message →
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div
+            id="modal-overlay"
+            class="fixed inset-0 bg-black transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] opacity-0 pointer-events-none"
+            style="z-index: 999;"
+          ></div>
+          <div
+            id="form-message"
+            class="hidden justify-center items-center mt-4 text-[var(--white)] text-lg"
           >
-            Submit
-          </button>
-        </form>
-        <div
-          id="form-message"
-          class="hidden justify-center items-center mt-4 text-[var(--white)] text-lg"
-        >
-          ✅ Thank you for your message!
+            ✅ Thank you for your message!
+          </div>
+        </div>
+
+        <div class="md:w-[485px]">
+          <div class="group">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block"
+            >
+              <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4 border border-[var(--white-icon-tr)]">
+                <img
+                  src="/BlackMount.png"
+                  alt="BlackMount Corporation"
+                  class="w-full h-48 md:h-72 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                />
+                <div class="p-4 flex items-center justify-between">
+                  <div class="py-[0.32rem]">
+                    <h4 class="text-2xl font-semibold mb-1 text-[var(--white)]">BlackMount Corporation</h4>
+                    <span class="block text-sm text-[var(--white-icon)]">
+                      Desarrollo de Software Personalizado
+                    </span>
+                  </div>
+                  <div class="flex gap-2">
+                    <a
+                      href="#"
+                      aria-label="Contactar"
+                      class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[#ffffff1a]"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="size-7"
+                      >
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </a>
+                    <a
+                      href="#"
+                      aria-label="Ver más"
+                      class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[#ffffff1a]"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="size-7"
+                      >
+                        <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <button
+                  class="w-full py-3 px-4 text-[var(--white-icon)] hover:text-white transition-all duration-500 ease-in-out border-t border-[var(--white-icon-tr)] bg-[#1414149c] hover:bg-[var(--white-icon-tr)] flex items-center justify-center gap-2"
+                >
+                  <svg class="w-[18px] h-[18px] transition-colors duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="transition-colors duration-500">Send</span>
+                </button>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -64,29 +199,156 @@
 <script type="module" is:inline>
   const form = document.getElementById("contact-form");
   const formMessage = document.getElementById("form-message");
+  const copyEmailBtn = document.getElementById("copy-email-btn");
+  const sendButton = document.getElementById("send-button");
+  const textarea = form.querySelector("textarea");
+  const scrollbar = textarea.parentElement.querySelector('.absolute');
+  const scrollbarThumb = scrollbar.querySelector('.absolute');
+
+  // Función para mostrar éxito
+  function showSuccess() {
+    // Cambiar el color del botón a verde con texto blanco
+    sendButton.classList.add("bg-green-500", "border-green-500", "text-white");
+    sendButton.classList.remove("bg-[#1414149c]", "border-[var(--white-icon-tr)]", "text-[var(--white-icon)]");
+    
+    // Restaurar el botón después de 3 segundos
+    setTimeout(() => {
+      sendButton.classList.remove("bg-green-500", "border-green-500", "text-white");
+      sendButton.classList.add("bg-[#1414149c]", "border-[var(--white-icon-tr)]", "text-[var(--white-icon)]");
+    }, 3000);
+  }
+
+  // Función para mostrar error
+  function showError() {
+    // Cambiar el color del botón a rojo
+    sendButton.classList.add("bg-red-500/20", "border-red-500/30", "text-red-400");
+    sendButton.classList.remove("bg-[#1414149c]", "border-[var(--white-icon-tr)]", "text-[var(--white-icon)]");
+    
+    // Restaurar el botón después de 3 segundos
+    setTimeout(() => {
+      sendButton.classList.remove("bg-red-500/20", "border-red-500/30", "text-red-400");
+      sendButton.classList.add("bg-[#1414149c]", "border-[var(--white-icon-tr)]", "text-[var(--white-icon)]");
+    }, 3000);
+  }
+
+  // Función para actualizar la barra de scroll
+  function updateScrollbar() {
+    const scrollPercentage = textarea.scrollTop / (textarea.scrollHeight - textarea.clientHeight);
+    const thumbHeight = Math.max(30, textarea.clientHeight * (textarea.clientHeight / textarea.scrollHeight));
+    const thumbTop = scrollPercentage * (textarea.clientHeight - thumbHeight);
+    
+    scrollbarThumb.style.height = `${thumbHeight}px`;
+    scrollbarThumb.style.top = `${thumbTop}px`;
+    scrollbarThumb.style.opacity = '1';
+  }
+
+  // Eventos para la barra de scroll
+  textarea.addEventListener('scroll', updateScrollbar);
+  textarea.addEventListener('input', updateScrollbar);
+  textarea.addEventListener('resize', updateScrollbar);
+
+  // Hacer la barra de scroll interactiva
+  let isDragging = false;
+  let startY;
+  let startScrollTop;
+
+  scrollbarThumb.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startY = e.clientY;
+    startScrollTop = textarea.scrollTop;
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    
+    const deltaY = e.clientY - startY;
+    const scrollHeight = textarea.scrollHeight - textarea.clientHeight;
+    const thumbHeight = scrollbarThumb.offsetHeight;
+    const scrollRatio = deltaY / (textarea.clientHeight - thumbHeight);
+    
+    textarea.scrollTop = startScrollTop + (scrollHeight * scrollRatio);
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  // Mostrar/ocultar la barra de scroll al hacer hover
+  textarea.addEventListener('mouseenter', () => {
+    scrollbarThumb.style.opacity = '1';
+  });
+
+  textarea.addEventListener('mouseleave', () => {
+    if (!isDragging) {
+      scrollbarThumb.style.opacity = '0';
+    }
+  });
+
+  // Función para copiar el correo al portapapeles
+  copyEmailBtn.addEventListener("click", async () => {
+    const email = "ceo@blackmountcorporation.com";
+    try {
+      await navigator.clipboard.writeText(email);
+      const originalTitle = copyEmailBtn.title;
+      copyEmailBtn.title = "¡Copiado!";
+      copyEmailBtn.querySelector("svg").classList.add("text-[#3B82F6]");
+      
+      setTimeout(() => {
+        copyEmailBtn.title = originalTitle;
+        copyEmailBtn.querySelector("svg").classList.remove("text-[#3B82F6]");
+      }, 2000);
+    } catch (err) {
+      console.error("Error al copiar:", err);
+    }
+  });
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    // Validar el formulario
+    const fromEmail = form.querySelector('input[name="email"]').value;
+    const subject = form.querySelector('input[name="subject"]').value;
+    const message = form.querySelector('textarea[name="message"]').value;
+
+    if (!fromEmail || !subject || !message) {
+      showError();
+      return;
+    }
+
+    // Validar formato de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(fromEmail)) {
+      showError();
+      return;
+    }
+
     const formData = new FormData(form);
 
     try {
       const response = await fetch(form.action, {
         method: "POST",
         body: formData,
-        headers: { Accept: "application/json" },
+        headers: { 
+          Accept: "application/json"
+        },
       });
+
       if (response.ok) {
+        showSuccess();
         form.reset();
-        form.style.display = "none";
-        formMessage.classList.remove("hidden");
       } else {
-        const data = await response.json();
-        console.error("Error response:", data);
-        alert("There was a problem sending your message.");
+        showError();
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("There was a problem sending your message.");
+      showError();
     }
+  });
+
+  // Limpiar mensaje cuando se hace clic en cualquier parte del formulario
+  form.addEventListener("click", () => {
+    formMessage.classList.add("hidden");
+    formMessage.classList.remove("flex");
+    formMessage.classList.remove("text-red-500");
   });
 </script>
