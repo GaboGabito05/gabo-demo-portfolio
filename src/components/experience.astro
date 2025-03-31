@@ -4,6 +4,8 @@ interface Experience {
   company: string;
   duration: string;
   description: string;
+  image: string;
+  link: string;
 }
 
 const experiences: Experience[] = [
@@ -11,42 +13,63 @@ const experiences: Experience[] = [
     role: "Backend Developer",
     company: "COMPINA S.A.C.",
     duration: "APRIL 2022 – JUNE 2022",
-    description: "In this company, I was responsible for the Backend development of a CRM system for its internal infrastructure. I participated in the system design and was part of a team that worked under the SCRUM methodology, using technologies such as Node.js, Express.js, MySQL, and Git for version control.",
+    description:
+      "In this company, I was responsible for the Backend development of a CRM system for its internal infrastructure. I participated in the system design and was part of a team that worked under the SCRUM methodology, using technologies such as Node.js, Express.js, MySQL, and Git for version control.",
+    image: "/Phoenix-js.jpg",
+    link: "https://example.com/compina",
   },
   {
-    role: "Frotend Developer",
+    role: "Frontend Developer",
     company: "COMPIPRO S.A.C.",
     duration: "JULY 2022 – SEPTEMBER 2022",
-    description: "I developed optimized web interfaces with Astro, React, Tailwind CSS, and TypeScript, focusing on performance and accessibility. Implemented SSR, CSR, and caching to improve user experience. Optimized deployments and security through Cloudflare Pages.",
+    description:
+      "I developed optimized web interfaces with Astro, React, Tailwind CSS, and TypeScript, focusing on performance and accessibility. Implemented SSR, CSR, and caching to improve user experience. Optimized deployments and security through Cloudflare Pages.",
+    image: "/Phoenix-js.jpg",
+    link: "https://example.com/compipro",
   },
   {
     role: "RPA Developer",
     company: "DATA DISCOVERY SOLUTIONS S.A.C.",
     duration: "OCTOBER 2022 – APRIL 2023",
-    description: "In this company, I developed and implemented RPA robots with Rocketbot Studio, optimizing processes with JavaScript, Python, and Excel. Automated repetitive tasks, improving operational efficiency and system integration. Additionally, I was trained and certified in the Rocketbot Studio tool.",
+    description:
+      "In this company, I developed and implemented RPA robots with Rocketbot Studio, optimizing processes with JavaScript, Python, and Excel. Automated repetitive tasks, improving operational efficiency and system integration. Additionally, I was trained and certified in the Rocketbot Studio tool.",
+    image: "/Phoenix-js.jpg",
+    link: "https://example.com/datadiscovery",
   },
   {
     role: "Full Stack Developer",
     company: "IB GROUP S.A.C.",
     duration: "APRIL 2023 – APRIL 2024",
-    description: "I developed and maintained the company's web infrastructure with Angular, ASP.NET Core, Microsoft SQL Server, ensuring stability and performance optimization. Managed local and cloud servers, implemented version control with Git, and improved user experience by applying UI/UX best practices.",
+    description:
+      "I developed and maintained the company's web infrastructure with Angular, ASP.NET Core, Microsoft SQL Server, ensuring stability and performance optimization. Managed local and cloud servers, implemented version control with Git, and improved user experience by applying UI/UX best practices.",
+    image: "/Phoenix-js.jpg",
+    link: "https://example.com/ibgroup",
   },
   {
     role: "CEO & Software Architect",
     company: "BLACKMOUNT CORPORATION E.I.R.L.",
     duration: "APRIL 2024 – PRESENT",
-    description: "As a Software Architech, I designed the architecture of all the company's products, SaaS and PaaS, focusing on scalability, performance, and security. Led the design and development of ERP systems, optimizing applications and cloud solutions with Next.js, MongoDB, and Azure, aligning the infrastructure with the company's strategic vision.",
+    description:
+      "As a Software Architech, I designed the architecture of all the company's products, SaaS and PaaS, focusing on scalability, performance, and security. Led the design and development of ERP systems, optimizing applications and cloud solutions with Next.js, MongoDB, and Azure, aligning the infrastructure with the company's strategic vision.",
+    image: "/Phoenix-js.jpg",
+    link: "https://example.com/blackmount",
   },
   {
     role: "Partner & Software Engineer",
     company: "PANDA TECH S.A.C.",
     duration: "MARZO 2025 – PRESENT",
-    description: "As a partner at Panda Tech S.A.C., I participated in the development of software solutions for clients using a variety of web and mobile technologies. I worked closely with cross-functional teams to deliver high-quality products, ensuring that the solutions met client requirements and industry standards.",
+    description:
+      "As a partner at Panda Tech S.A.C., I participated in the development of software solutions for clients using a variety of web and mobile technologies. I worked closely with cross-functional teams to deliver high-quality products, ensuring that the solutions met client requirements and industry standards.",
+    image: "/Phoenix-js.jpg",
+    link: "https://example.com/pandatech",
   },
 ];
 ---
 
-<section id="experience" class="py-12 border-t border-[#ffffff10] text-[var(--white)]">
+<section
+  id="experience"
+  class="py-12 border-t border-[#ffffff10] text-[var(--white)]"
+>
   <div class="max-w-5xl mx-auto">
     <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My Journey</h2>
     <h3 class="text-4xl md:text-5xl font-medium mb-8">Experience</h3>
@@ -55,34 +78,78 @@ const experiences: Experience[] = [
       {
         experiences.map((experience) => (
           <div class="group">
-            <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4 p-6 bg-transparent border border-[var(--white-icon-tr)] h-full transform hover:scale-105 hover:bg-[rgba(255,255,255,0.1)]">
-              <h4 class="text-2xl font-semibold text-white">{experience.role}</h4>
-              <span class="py-1 text-sm text-[var(--white-icon)]">
-                {experience.company} - {experience.duration}
-              </span>
-              <p class="mt-4 text-md text-[var(--white-icon)]">
-                {experience.description}
-              </p>
+            <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4 bg-transparent border border-[var(--white-icon-tr)] h-full flex flex-col">
+              <img
+                src={experience.image}
+                alt={experience.company}
+                class="w-full h-48 md:h-72 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                  <h4 class="text-2xl font-semibold text-white">
+                    {experience.role}
+                  </h4>
+                  <span class="py-1 text-sm text-[var(--white-icon)] block">
+                    <strong>{experience.company}</strong> -{" "}
+                    {experience.duration}
+                  </span>
+                  <p class="mt-4 text-sm text-[var(--white-icon)] leading-relaxed">
+                    {experience.description}
+                  </p>
+                </div>
+                <div class="flex gap-4 mt-6">
+                  <a
+                    href={experience.link}
+                    target="_blank"
+                    class="flex-grow flex items-center justify-center gap-2 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-lg bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-5"
+                    >
+                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                    </svg>
+                    View Details
+                  </a>
+                  <a
+                    href="#contact"
+                    class="flex-grow flex items-center justify-center gap-2 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-lg bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-chat-left-dots-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                    </svg>
+                    Get in Touch
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         ))
       }
     </div>
+    <a
+      href="/CV-Gabriel-Polack-Software-Developer.pdf"
+      download="CV-Gabriel-Polack-Software-Developer.pdf"
+      aria-label="Download Curriculum Vitae"
+      class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+    >
+      <span class="md:text-lg text-md">Download Curriculum Vitae</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
+        <path d="M5.523 12.424q.21-.124.459-.238a8 8 0 0 1-.45.606c-.28.337-.498.516-.635.572l-.035.012a.3.3 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548m2.455-1.647q-.178.037-.356.078a21 21 0 0 0 .5-1.05 12 12 0 0 0 .51.858q-.326.048-.654.114m2.525.939a4 4 0 0 1-.435-.41q.344.007.612.054c.317.057.466.147.518.209a.1.1 0 0 1 .026.064.44.44 0 0 1-.06.2.3.3 0 0 1-.094.124.1.1 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256M8.278 6.97c-.04.244-.108.524-.2.829a5 5 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.5.5 0 0 1 .145-.04c.013.03.028.092.032.198q.008.183-.038.465z"/>
+        <path fill-rule="evenodd" d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.7 11.7 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.86.86 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.84.84 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.8 5.8 0 0 0-1.335-.05 11 11 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.24 1.24 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a20 20 0 0 1-1.062 2.227 7.7 7.7 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103"/>
+      </svg>
+    </a>
   </div>
 </section>
-
-<script>
-  document.addEventListener('scroll', () => {
-    const experienceSection = document.getElementById('experience');
-    const navLink = document.querySelector('nav a[href="#experience"]');
-    const rect = experienceSection.getBoundingClientRect();
-    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-      navLink.classList.add('text-white');
-    } else {
-      navLink.classList.remove('text-white');
-    }
-  });
-</script>
 
 <style is:global>
   .shiny-sec {

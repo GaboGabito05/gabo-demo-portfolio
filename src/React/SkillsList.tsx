@@ -33,25 +33,73 @@ const CategoryIcons = {
       <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5M12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0m2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0M1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25" />
     </svg>
   ),
+  "IT Project Management": (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      className="bi bi-kanban-fill w-6 h-6 text-[var(--sec)] opacity-70"
+      viewBox="0 0 16 16"
+    >
+      <path d="M2.5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm5 2h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1m-5 1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1zm9-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1" />
+    </svg>
+  ),
+  "Database Administration": (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      className="bi bi-database-fill w-6 h-6 text-[var(--sec)] opacity-70"
+      viewBox="0 0 16 16"
+    >
+      <path d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223" />
+      <path d="M2 6.161V7c0 1.007.875 1.755 1.904 2.223C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777C13.125 8.755 14 8.007 14 7v-.839c-.457.432-1.004.751-1.49.972C11.278 7.693 9.682 8 8 8s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+      <path d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+      <path d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+    </svg>
+  ),
 };
 
 const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const skills = {
+    "IT Project Management": [
+      "Agile/Scrum methodologies",
+      "Stakeholder coordination",
+      "Technical requirement analysis",
+      "Project lifecycle management",
+      "Cloud migration planning"
+    ],
     "Systems Development": [
-      "Database design and modeling",
-      "Process analysis",
-      "Cloud administration",
+      "Azure cloud architecture",
+      "Microservices design",
+      "API integration",
+      "System optimization",
+      "CI/CD pipeline implementation"
     ],
     "Web Development": [
-      "Single Page Applications (SPAs)",
-      "Landing pages and business websites",
-      "Enterprise applications",
+      "Single Page Applications (SPAs with Astro/React)",
+      "Enterprise-grade web applications",
+      "Serverless architectures (Azure Functions)",
+      "Responsive UI/UX implementation",
+      "RESTful API development"
     ],
     "Mobile Development": [
-      "Mobile-friendly web apps",
-      "React Native mobile apps",
+      "Cross-platform apps (React Native/Flutter)",
+      "Mobile-first PWA development",
+      "Native Android/iOS bridges",
+      "Offline-first architectures",
+      "Mobile CI/CD pipelines"
+    ],
+    "Database Administration": [
+      "Azure SQL optimization",
+      "NoSQL solutions (Cosmos DB)",
+      "Data warehousing",
+      "ETL process design",
+      "Database security hardening"
     ]
   };
 
