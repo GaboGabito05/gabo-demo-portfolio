@@ -17,9 +17,16 @@
 
       <div class="flex flex-col md:flex-row gap-12">
         <div class="md:w-[485px]">
-          <div id="email-form" class="bg-[#1414149c] rounded-2xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] border border-[var(--white-icon-tr)]">
-            <div class="flex items-center justify-between px-4 py-3 border-b border-[var(--white-icon-tr)]">
-              <span class="text-[var(--white)] text-sm font-medium">New Message</span>
+          <div
+            id="email-form"
+            class="bg-[#1414149c] rounded-2xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] border border-[var(--white-icon-tr)]"
+          >
+            <div
+              class="flex items-center justify-between px-4 py-3 border-b border-[var(--white-icon-tr)]"
+            >
+              <span class="text-[var(--white)] text-sm font-medium"
+                >New Message</span
+              >
             </div>
             <form
               id="contact-form"
@@ -28,7 +35,9 @@
               class="flex flex-col"
             >
               <div class="flex items-center gap-2 py-2 px-4">
-                <span class="text-[var(--white-icon)] text-sm min-w-[3rem]">From:</span>
+                <span class="text-[var(--white-icon)] text-sm min-w-[3rem]"
+                  >From:</span
+                >
                 <div class="flex-1">
                   <input
                     type="email"
@@ -41,7 +50,9 @@
               </div>
               <div class="border-b border-[var(--white-icon-tr)]"></div>
               <div class="flex items-center gap-2 py-2 px-4">
-                <span class="text-[var(--white-icon)] text-sm min-w-[3rem]">To:</span>
+                <span class="text-[var(--white-icon)] text-sm min-w-[3rem]"
+                  >To:</span
+                >
                 <div class="flex-1 flex items-center gap-2">
                   <input
                     type="email"
@@ -50,15 +61,27 @@
                     readonly
                     class="w-full px-0 py-0.5 bg-transparent text-[var(--white)] text-sm focus:outline-none"
                   />
-                  <button 
-                    type="button" 
-                    id="copy-email-btn" 
+                  <button
+                    type="button"
+                    id="copy-email-btn"
                     class="p-1.5 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
                     title="Copiar correo"
                   >
-                    <svg class="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                      <path d="M8 4v12a2 2 0 002 2h8a2 2 0 002-2V7.242a2 2 0 00-.602-1.43L16.083 2.57A2 2 0 0014.685 2H10a2 2 0 00-2 2z" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2h2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg
+                      class="w-[16px] h-[16px]"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        d="M8 4v12a2 2 0 002 2h8a2 2 0 002-2V7.242a2 2 0 00-.602-1.43L16.083 2.57A2 2 0 0014.685 2H10a2 2 0 00-2 2z"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                      <path
+                        d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2h2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
                     </svg>
                   </button>
                 </div>
@@ -72,24 +95,36 @@
                     placeholder="Subject"
                     class="flex-1 px-0 py-0.5 bg-transparent text-[var(--white)] text-sm focus:outline-none placeholder-[var(--white-icon)]"
                   />
-                  <span class="text-[var(--white-icon)] text-xs whitespace-nowrap">{new Date().toLocaleString('en-US', { 
-                    month: 'short',
-                    day: 'numeric',
-                    hour: 'numeric',
-                    minute: '2-digit',
-                    hour12: true
-                  })}</span>
+                  <span
+                    class="text-[var(--white-icon)] text-xs whitespace-nowrap"
+                    >{
+                      new Date().toLocaleString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        hour: "numeric",
+                        minute: "2-digit",
+                        hour12: true,
+                      })
+                    }</span
+                  >
                 </div>
               </div>
-              <div class="relative py-3 flex-grow transition-all duration-300 ease-out px-4" style="min-height: 200px;">
+              <div
+                class="relative py-3 flex-grow transition-all duration-300 ease-out px-4"
+                style="min-height: 200px;"
+              >
                 <textarea
                   name="message"
                   placeholder="Write your message here..."
                   class="w-full h-full px-0 py-0 bg-transparent text-[var(--white)] text-sm focus:outline-none resize-none leading-relaxed overflow-y-auto placeholder-[var(--white-icon)] scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-                  style="min-height: 180px; max-height: 300px;"
-                ></textarea>
-                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-transparent">
-                  <div class="absolute right-0 top-0 bottom-0 w-full bg-[var(--white-icon-tr)] rounded-full opacity-0 hover:opacity-100 transition-opacity"></div>
+                  style="min-height: 180px; max-height: 300px;"></textarea>
+                <div
+                  class="absolute right-0 top-0 bottom-0 w-1.5 bg-transparent"
+                >
+                  <div
+                    class="absolute right-0 top-0 bottom-0 w-full bg-[var(--white-icon-tr)] rounded-full opacity-0 hover:opacity-100 transition-opacity"
+                  >
+                  </div>
                 </div>
               </div>
               <button
@@ -97,12 +132,23 @@
                 id="send-button"
                 class="w-full py-3 px-4 text-[var(--white-icon)] hover:text-white transition-all duration-500 ease-in-out border-t border-[var(--white-icon-tr)] bg-[#1414149c] hover:bg-[var(--white-icon-tr)] flex items-center justify-center gap-2"
               >
-                <svg class="w-[18px] h-[18px] transition-colors duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg
+                  class="w-[18px] h-[18px] transition-colors duration-500"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
                 </svg>
                 <span class="transition-colors duration-500">Send</span>
               </button>
-              <div class="hidden modal-actions fixed bottom-0 left-0 right-0 py-4 px-6 bg-[#1414149c] border-t border-[var(--white-icon-tr)]">
+              <div
+                class="hidden modal-actions fixed bottom-0 left-0 right-0 py-4 px-6 bg-[#1414149c] border-t border-[var(--white-icon-tr)]"
+              >
                 <div class="max-w-[800px] mx-auto flex justify-end">
                   <button
                     type="submit"
@@ -118,7 +164,8 @@
             id="modal-overlay"
             class="fixed inset-0 bg-black transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] opacity-0 pointer-events-none"
             style="z-index: 999;"
-          ></div>
+          >
+          </div>
           <div
             id="form-message"
             class="hidden justify-center items-center mt-4 text-[var(--white)] text-lg"
@@ -129,13 +176,10 @@
 
         <div class="md:w-[485px]">
           <div class="group">
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block"
-            >
-              <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4 border border-[var(--white-icon-tr)]">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="block">
+              <div
+                class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4 border border-[var(--white-icon-tr)]"
+              >
                 <img
                   src="/BlackMount.png"
                   alt="BlackMount Corporation"
@@ -143,29 +187,34 @@
                 />
                 <div class="p-4 flex items-center justify-between">
                   <div class="py-[0.32rem]">
-                    <h4 class="text-2xl font-semibold mb-1 text-[var(--white)]">BlackMount Corporation</h4>
+                    <h4 class="text-2xl font-semibold mb-1 text-[var(--white)]">
+                      BlackMount Corporation
+                    </h4>
                     <span class="block text-sm text-[var(--white-icon)]">
                       Desarrollo de Software Personalizado
                     </span>
                   </div>
                   <div class="flex gap-2">
                     <a
-                      href="#"
-                      aria-label="Contactar"
+                      href="https://github.com/BlackMount-Corporation"
+                      target="_blank"
+                      aria-label="GitHub"
                       class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[#ffffff1a]"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="size-7"
+                        class="size-8"
+                        ><path
+                          d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"
+                        ></path></svg
                       >
-                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
                     </a>
                     <a
-                      href="#"
-                      aria-label="Ver más"
+                      href="https://blackmountcorporation.com"
+                      target="_blank"
+                      aria-label="Website"
                       class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[#ffffff1a]"
                     >
                       <svg
@@ -174,7 +223,9 @@
                         fill="currentColor"
                         class="size-7"
                       >
-                        <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                        <path
+                          d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
+                        ></path>
                       </svg>
                     </a>
                   </div>
@@ -182,10 +233,19 @@
                 <button
                   class="w-full py-3 px-4 text-[var(--white-icon)] hover:text-white transition-all duration-500 ease-in-out border-t border-[var(--white-icon-tr)] bg-[#1414149c] hover:bg-[var(--white-icon-tr)] flex items-center justify-center gap-2"
                 >
-                  <svg class="w-[18px] h-[18px] transition-colors duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-whatsapp"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+                    ></path>
                   </svg>
-                  <span class="transition-colors duration-500">Send</span>
+                  <span class="transition-colors duration-500">Contact Us</span>
                 </button>
               </div>
             </a>
@@ -202,85 +262,117 @@
   const copyEmailBtn = document.getElementById("copy-email-btn");
   const sendButton = document.getElementById("send-button");
   const textarea = form.querySelector("textarea");
-  const scrollbar = textarea.parentElement.querySelector('.absolute');
-  const scrollbarThumb = scrollbar.querySelector('.absolute');
+  const scrollbar = textarea.parentElement.querySelector(".absolute");
+  const scrollbarThumb = scrollbar.querySelector(".absolute");
 
   // Función para mostrar éxito
   function showSuccess() {
     // Cambiar el color del botón a verde con texto blanco
     sendButton.classList.add("bg-green-500", "border-green-500", "text-white");
-    sendButton.classList.remove("bg-[#1414149c]", "border-[var(--white-icon-tr)]", "text-[var(--white-icon)]");
-    
+    sendButton.classList.remove(
+      "bg-[#1414149c]",
+      "border-[var(--white-icon-tr)]",
+      "text-[var(--white-icon)]"
+    );
+
     // Restaurar el botón después de 3 segundos
     setTimeout(() => {
-      sendButton.classList.remove("bg-green-500", "border-green-500", "text-white");
-      sendButton.classList.add("bg-[#1414149c]", "border-[var(--white-icon-tr)]", "text-[var(--white-icon)]");
+      sendButton.classList.remove(
+        "bg-green-500",
+        "border-green-500",
+        "text-white"
+      );
+      sendButton.classList.add(
+        "bg-[#1414149c]",
+        "border-[var(--white-icon-tr)]",
+        "text-[var(--white-icon)]"
+      );
     }, 3000);
   }
 
   // Función para mostrar error
   function showError() {
     // Cambiar el color del botón a rojo
-    sendButton.classList.add("bg-red-500/20", "border-red-500/30", "text-red-400");
-    sendButton.classList.remove("bg-[#1414149c]", "border-[var(--white-icon-tr)]", "text-[var(--white-icon)]");
-    
+    sendButton.classList.add(
+      "bg-red-500/20",
+      "border-red-500/30",
+      "text-red-400"
+    );
+    sendButton.classList.remove(
+      "bg-[#1414149c]",
+      "border-[var(--white-icon-tr)]",
+      "text-[var(--white-icon)]"
+    );
+
     // Restaurar el botón después de 3 segundos
     setTimeout(() => {
-      sendButton.classList.remove("bg-red-500/20", "border-red-500/30", "text-red-400");
-      sendButton.classList.add("bg-[#1414149c]", "border-[var(--white-icon-tr)]", "text-[var(--white-icon)]");
+      sendButton.classList.remove(
+        "bg-red-500/20",
+        "border-red-500/30",
+        "text-red-400"
+      );
+      sendButton.classList.add(
+        "bg-[#1414149c]",
+        "border-[var(--white-icon-tr)]",
+        "text-[var(--white-icon)]"
+      );
     }, 3000);
   }
 
   // Función para actualizar la barra de scroll
   function updateScrollbar() {
-    const scrollPercentage = textarea.scrollTop / (textarea.scrollHeight - textarea.clientHeight);
-    const thumbHeight = Math.max(30, textarea.clientHeight * (textarea.clientHeight / textarea.scrollHeight));
+    const scrollPercentage =
+      textarea.scrollTop / (textarea.scrollHeight - textarea.clientHeight);
+    const thumbHeight = Math.max(
+      30,
+      textarea.clientHeight * (textarea.clientHeight / textarea.scrollHeight)
+    );
     const thumbTop = scrollPercentage * (textarea.clientHeight - thumbHeight);
-    
+
     scrollbarThumb.style.height = `${thumbHeight}px`;
     scrollbarThumb.style.top = `${thumbTop}px`;
-    scrollbarThumb.style.opacity = '1';
+    scrollbarThumb.style.opacity = "1";
   }
 
   // Eventos para la barra de scroll
-  textarea.addEventListener('scroll', updateScrollbar);
-  textarea.addEventListener('input', updateScrollbar);
-  textarea.addEventListener('resize', updateScrollbar);
+  textarea.addEventListener("scroll", updateScrollbar);
+  textarea.addEventListener("input", updateScrollbar);
+  textarea.addEventListener("resize", updateScrollbar);
 
   // Hacer la barra de scroll interactiva
   let isDragging = false;
   let startY;
   let startScrollTop;
 
-  scrollbarThumb.addEventListener('mousedown', (e) => {
+  scrollbarThumb.addEventListener("mousedown", (e) => {
     isDragging = true;
     startY = e.clientY;
     startScrollTop = textarea.scrollTop;
   });
 
-  document.addEventListener('mousemove', (e) => {
+  document.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
-    
+
     const deltaY = e.clientY - startY;
     const scrollHeight = textarea.scrollHeight - textarea.clientHeight;
     const thumbHeight = scrollbarThumb.offsetHeight;
     const scrollRatio = deltaY / (textarea.clientHeight - thumbHeight);
-    
-    textarea.scrollTop = startScrollTop + (scrollHeight * scrollRatio);
+
+    textarea.scrollTop = startScrollTop + scrollHeight * scrollRatio;
   });
 
-  document.addEventListener('mouseup', () => {
+  document.addEventListener("mouseup", () => {
     isDragging = false;
   });
 
   // Mostrar/ocultar la barra de scroll al hacer hover
-  textarea.addEventListener('mouseenter', () => {
-    scrollbarThumb.style.opacity = '1';
+  textarea.addEventListener("mouseenter", () => {
+    scrollbarThumb.style.opacity = "1";
   });
 
-  textarea.addEventListener('mouseleave', () => {
+  textarea.addEventListener("mouseleave", () => {
     if (!isDragging) {
-      scrollbarThumb.style.opacity = '0';
+      scrollbarThumb.style.opacity = "0";
     }
   });
 
@@ -292,7 +384,7 @@
       const originalTitle = copyEmailBtn.title;
       copyEmailBtn.title = "¡Copiado!";
       copyEmailBtn.querySelector("svg").classList.add("text-[#3B82F6]");
-      
+
       setTimeout(() => {
         copyEmailBtn.title = originalTitle;
         copyEmailBtn.querySelector("svg").classList.remove("text-[#3B82F6]");
@@ -328,8 +420,8 @@
       const response = await fetch(form.action, {
         method: "POST",
         body: formData,
-        headers: { 
-          Accept: "application/json"
+        headers: {
+          Accept: "application/json",
         },
       });
 
