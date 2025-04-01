@@ -1,6 +1,6 @@
 const LetterGlitch = () => {
   return (
-    <div className="flex justify-center w-full">
+    <div className="flex justify-center w-full md:pt-24">
       <div className="group w-full max-w-[500px]">
         <a
           href="/titulo-profesional-tecnico.jpg"
