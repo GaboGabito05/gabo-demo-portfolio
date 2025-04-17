@@ -20,10 +20,10 @@ const LetterGlitch = () => {
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-0">
                 <div>
                   <h4 className="text-lg md:text-2xl font-semibold">
-                    Professional Title
+                    Bachiller Técnico
                   </h4>
                   <span className="py-0.5 text-xs md:text-sm text-[var(--white-icon)] block">
-                    Information Systems Development
+                    Desarrollo de Sistemas de Información
                   </span>
                 </div>
                 <div className="flex gap-2">

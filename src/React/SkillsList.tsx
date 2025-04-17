@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const CategoryIcons = {
-  "Web Development": (
+  "Desarrollo Web": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -11,7 +11,7 @@ const CategoryIcons = {
       <path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM20 11H4V19H20V11ZM20 5H4V9H20V5ZM11 6V8H9V6H11ZM7 6V8H5V6H7Z"></path>
     </svg>
   ),
-  "Mobile Development": (
+  "Desarrollo Móvil": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -21,7 +21,7 @@ const CategoryIcons = {
       <path d="M7 4V20H17V4H7ZM6 2H18C18.5523 2 19 2.44772 19 3V21C19 21.5523 18.5523 22 18 22H6C5.44772 22 5 21.5523 5 21V3C5 2.44772 5.44772 2 6 2ZM12 17C12.5523 17 13 17.4477 13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17Z"></path>
     </svg>
   ),
-  "Systems Development": (
+  "Desarrollo de Sistemas": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -33,7 +33,7 @@ const CategoryIcons = {
       <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5M12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0m2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0M1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25" />
     </svg>
   ),
-  "IT Project Management": (
+  "Gestión de Proyectos de TI": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -45,7 +45,7 @@ const CategoryIcons = {
       <path d="M2.5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm5 2h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1m-5 1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1zm9-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1" />
     </svg>
   ),
-  "Database Administration": (
+  "Bases de Datos SQL/NoSQL": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -66,40 +66,40 @@ const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const skills = {
-    "IT Project Management": [
-      "Agile/Scrum methodologies",
-      "Stakeholder coordination",
-      "Technical requirement analysis",
-      "Project lifecycle management",
-      "Cloud migration planning"
+    "Gestión de Proyectos de TI": [
+      "Metodologías Agile/Scrum",
+      "Coordinación con stakeholders",
+      "Análisis de requerimientos técnicos",
+      "Gestión del ciclo de vida del proyecto",
+      "Planificación de migración a la nube"
     ],
-    "Systems Development": [
-      "Azure cloud architecture",
-      "Microservices design",
-      "API integration",
-      "System optimization",
-      "CI/CD pipeline implementation"
+    "Desarrollo de Sistemas": [
+      "Arquitectura en la nube con Azure",
+      "Diseño de microservicios",
+      "Integración de APIs",
+      "Optimización de sistemas",
+      "Implementación de pipelines CI/CD"
     ],
-    "Web Development": [
-      "Single Page Applications (SPAs with Astro/React)",
-      "Enterprise-grade web applications",
-      "Serverless architectures (Azure Functions)",
-      "Responsive UI/UX implementation",
-      "RESTful API development"
+    "Desarrollo Web": [
+      "Aplicaciones de una sola página (SPAs con Astro/React)",
+      "Aplicaciones web de nivel empresarial",
+      "Arquitecturas serverless (Azure Functions)",
+      "Implementación de UI/UX responsivo",
+      "Desarrollo de APIs RESTful"
     ],
-    "Mobile Development": [
-      "Cross-platform apps (React Native/Flutter)",
-      "Mobile-first PWA development",
-      "Native Android/iOS bridges",
-      "Offline-first architectures",
-      "Mobile CI/CD pipelines"
+    "Desarrollo Móvil": [
+      "Aplicaciones multiplataforma (React Native/Flutter)",
+      "Desarrollo de PWAs con enfoque móvil",
+      "Puentes nativos para Android/iOS",
+      "Arquitecturas offline-first",
+      "Pipelines CI/CD para móviles"
     ],
-    "Database Administration": [
-      "Azure SQL optimization",
-      "NoSQL solutions (Cosmos DB)",
-      "Data warehousing",
-      "ETL process design",
-      "Database security hardening"
+    "Bases de Datos SQL/NoSQL": [
+      "Optimización de Azure SQL",
+      "Soluciones NoSQL (Cosmos DB)",
+      "Almacenamiento de datos",
+      "Diseño de procesos ETL",
+      "Fortalecimiento de la seguridad en bases de datos"
     ]
   };
 
@@ -110,7 +110,7 @@ const SkillsList = () => {
   return (
     <div className="text-left pt-3 md:pt-9">
       <h3 className="text-[var(--white)] text-3xl md:text-4xl font-semibold md:mb-6">
-        What I do?
+        Habilidades
       </h3>
       <ul className="space-y-4 mt-4 text-lg">
         {Object.entries(skills).map(([category, items]) => (
